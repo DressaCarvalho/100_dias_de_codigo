@@ -1,4 +1,4 @@
-  def adicao(x,y):
+def adicao(x,y):
     return x+y
 
 def subtracao(x,y):
@@ -16,6 +16,31 @@ def calculadora():
    print("2.Subtração")
    print("3.Multiplicação")
    print("4.Divisão")
-
-num1 = int(input("Digite o primeiro número:"))
-num2 = int(input("Digite o segundo número:"))
+   while True:
+       escolha = input("Escolha(1/2/3/4):")
+       if escolha in ('1','2','3','4'):
+            x = int(input("Digite o primeiro numero: "))
+            y = int(input("digite o segundo numero: "))
+            if escolha == '1':
+                print("Resultado: ", adicao(x,y))
+            if escolha == '2':
+                print("Resultado: ",subtracao(x,y))
+            if escolha == '3':
+                print("Resultado: ", multiplicação(x,y))
+            if escolha =='4':
+                if y != 0:
+                    print("Resultado: ", divisao(x,y))
+                else:
+                    print("Não é permitida a divisão por zero")
+       else:
+           print("EScolha invalida")
+       continuar = input("Deseja fazer outra operação? (s/n)")
+       if continuar =="n":
+        print("Calculadora encerrada")
+        break;
+calculadora()
+   
+    
+        
+                        
+    
