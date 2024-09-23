@@ -1,0 +1,50 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 350px;
+    height: 500px;
+    perspective: 800px;
+}
+
+.card {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+.front-side, .back-side {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px grey;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-side {
+    background-size: 100% 100%;
+    background-image: url('https://www.razaoautomovel.com/wp-content/uploads/2016/03/Nissan-GT-R-2017-9.jpg') ;
+}
+
+.back-side {
+    background-color: black;
+    transform: rotateY('100deg');
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.container:hover > .card {
+    cursor: pointer;
+    transform: rotatev(180deg);
+}
